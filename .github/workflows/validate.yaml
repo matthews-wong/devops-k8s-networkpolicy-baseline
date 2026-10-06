@@ -24,5 +24,5 @@ jobs:
       - name: Install kubeconform
         run: |
           curl -fsSL "https://github.com/yannh/kubeconform/releases/download/v${KUBECONFORM_VERSION}/kubeconform-linux-amd64.tar.gz" \
-            | tar -xz -C /usr/local/bin kubeconform
+            | sudo tar -xz -C /usr/local/bin kubeconform
       - run: make validate
