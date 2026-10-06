@@ -34,3 +34,9 @@ make validate
 
 Runs `kubeconform -strict` against Kubernetes 1.31 and the selector check.
 Neither needs a cluster, so this does not prove a CNI enforces the policies.
+
+## Caveats
+
+- `api` and `web` both run `nginx-unprivileged` as stand-ins so the manifests are
+  realistic (non-root, read-only root filesystem) without needing a custom image.
+- The image is pinned by tag, not digest; pin a digest before using this for real.
